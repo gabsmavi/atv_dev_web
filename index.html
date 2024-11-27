@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="index-page"> <!-- Adicionando a classe 'index-page' -->
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <!-- Adicionando Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="text-center mt-5">
+        <img src="{{ url_for('static', filename='unifor.jpg') }}" alt="Logo do NavegaWeb" style="max-width: 100%; height: auto;">
+    </div>
+
+    <!-- Barra de navegação fixa no topo -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">NavegaWeb</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin">Usuário</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Registro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Container principal -->
+    <div class="container mt-5 pt-5"> <!-- pt-5 mantém espaço devido à navbar fixa -->
+        <h1 class="text-center mb-4">Bem-vindo(a) ao <span style="color: blue;">NavegaWeb!</span></h1>
+        <div class="row justify-content-center">
+            <div class="col-md-8 mb-3"> <!-- Coluna central menor para melhor leitura -->
+                <p>
+                    Este projeto consiste no desenvolvimento de uma aplicação web completa, que inclui uma Landing Page, telas de Autenticação (Login), Cadastro de Usuário e Gestão Administrativa. A aplicação permite o cadastro de novos usuários, a edição e exclusão de usuários existentes, e a exibição de uma lista de usuários na tela de gestão, usando uma tabela dinâmica.
+                </p>
+                <p>
+                    O <b>NavegaWeb</b> é um protótipo de site que reterá logins de um banco de dados vinculados a grupos de estudos da faculdade. Na parte administrativa, a tela permite ao administrador <b>visualizar, editar ou excluir usuários</b>, garantindo uma gestão completa dos dados. Após o cadastro de um novo usuário, o sistema possibilita que ele faça login e acesse a área de gestão.
+                </p>
+                <p>
+                    O front-end da aplicação foi desenvolvido utilizando <b><span style="color: blue;">HTML, CSS, e Bootstrap</span></b> para garantir um design responsivo e funcional. Para a comunicação entre o front-end e o back-end, foi utilizado o framework Axios, que faz requisições HTTP para interagir com a base de dados do MongoDB, onde os usuários são armazenados. Já o back-end foi feito utilizando as ferramentas <b><span style="color: blue;">Flask, CORS, dotenv e PyMongo</span></b>.
+                </p>
+                <p>
+                    Além disso, a aplicação foi desenvolvida em conformidade com as normas da <b>Lei Geral de Proteção de Dados Pessoais (LGPD)</b>, garantindo a segurança e privacidade das informações dos usuários.
+                </p>
+            </div>
+        </div>
+    </div>
+        <div class="row justify-content-center">
+            <div class="col-auto d-flex gap-3"> <!-- Botões mais próximos e alinhados -->
+                <button type="button" class="btn btn-primary" onclick="window.location.href='/login'">Login</button>
+                <button type="button" class="btn btn-primary" onclick="window.location.href='/register'">Registro</button>
+                <button type="button" class="btn btn-primary" onclick="window.location.href='/admin'">Usuário</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Adicionando o JS do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
